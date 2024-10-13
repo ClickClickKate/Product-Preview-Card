@@ -1,0 +1,180 @@
+/*  */
+*, ::before,::after {
+    box-sizing:border-box;
+}
+
+/* -----design variables------- */
+:root {
+
+  --pri-green: hsl(158, 36%, 37%);
+  --pri-cream:hsl(30, 38%, 92%);
+  --sec-darkblue: hsl(212, 21%, 14%);
+  --sec-dark-grayblue: hsl(228, 12%, 48%);
+  --sec-white:hsl(0, 0%, 100%);
+
+}
+
+html {
+  font-size: 14px;
+}
+
+
+/* --------------------------- */
+
+body {
+    background-color: var(--pri-cream);
+    font-size: 1rem;
+    color: var(--sec-dark-grayblue);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+  }
+  
+  /*  --- both sections -- */
+  .cardwrapper {
+    display:flex;
+    flex-direction:column;
+    max-width:90%;
+    max-width: 36rem;
+    margin:0 auto;
+    
+  }
+  
+/* ------- for the image ----- */
+#desktoppic {
+  display:none;
+}
+/* --- set mobile picture ------ */
+#mobilepic {
+  display:block;
+}
+
+  .contentimage img {
+    max-width: 100%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+
+  /*  ----- for the text ------- */
+  .contenttext {
+    background-color: var(--sec-white);
+    padding: 1.5em;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+  }
+
+  .contenttext h1 {
+    color: var(--sec-darkblue);
+    font-family: "Fraunces", serif;
+    font-size: 2.286rem;
+    line-height: 2.286rem;
+    margin-top:0.5em;
+  }
+  
+  .contenttext h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-top:0.75em;
+    letter-spacing: 0.25rem;
+  }
+
+  .contenttext p {
+    line-height: 1.643rem;
+    
+  }
+  
+  .pricewrapper {
+    padding: 0px;
+    margin-top:1.5em;
+  }
+
+  .price {
+    color:var(--pri-green);
+    font-size: 2.286rem;
+    font-weight:700;
+    display:inline-block;
+    font-family: "Fraunces", serif;
+    margin:0;
+  }
+  
+  .discount {
+    text-decoration:line-through;
+    display:inline-block;
+    margin: 0 1em;
+    font-size:0.857rem;
+    vertical-align: top;
+  /*move font to top???   */
+  }
+  
+
+/* ------ button --------  */
+
+  .btn {
+    background-color:var(--pri-green);
+    display:block;
+    padding: 1em;
+    border-radius: 1em;
+    font-size:1rem;
+    color:white;
+    text-decoration:none;
+    font-weight: 700;
+    margin-top:1.5em;
+    text-align: center;
+  }
+
+  .btn:hover, :focus, :active {
+    background-color: var(--sec-darkblue);
+    /* transition: 5s; */
+  }
+
+  .cart {
+    width:1em;
+    margin:0 0.5em;
+  }
+
+
+  
+
+  /* ----------------------------------------------------------- */
+  @media screen and (min-width: 1440px) {
+  
+    
+    .cardwrapper {
+    flex-direction:row;
+   position: absolute;
+   top:50%;
+   left:50%;
+   transform: translate(-50%, -50%);
+    }
+
+    /* positioning is only for this exercise to center in the screen -i avoid position absolute for responsive designs */
+   
+    .contenttext {
+      border-top-right-radius: 5%;
+      border-bottom-right-radius: 5%;
+      border-bottom-left-radius: 0%;
+    }
+
+/* replace picture */
+    #mobilepic {
+      display:none;
+    }
+  
+    #desktoppic {
+      display:block;
+    }
+    /* ------------------------ */
+    .contentimage img {
+      border-top-left-radius: 5%;
+      border-top-right-radius: 0%;
+      border-bottom-left-radius: 5%;
+      object-fit: cover;
+      height: 100%;
+  }
+  
+  
+
+  }
+    
+    
+  }
